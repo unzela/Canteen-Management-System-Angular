@@ -1,0 +1,56 @@
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(224, 157, 69, 0.3);
+    border: seagreen;
+    border-width: 3ch;;
+  }
+
+  .emoji {
+    padding: 3rem;
+    font-size: 6rem;
+    transform: scale(.5);
+    text-shadow: 0 2px 4px rgba(0,0,0,.3);
+    transition:
+      text-shadow .2s ease-in-out,
+      transform .2s ease-in-out;
+  }
+
+  .emoji:hover {
+    transform: scale(1) translatey(-20px);
+    text-shadow: 0 20px 20px rgba(0,0,0,.3);
+  }
+
+  .emoji--happy:before {
+    content: '🙂';
+  }
+
+  .emoji--happy:hover:before {
+    content: '😄';
+  }
+
+  .emoji--sad:before {
+    content: '😕';
+  }
+
+  .emoji--sad:hover:before {
+    content: '☹️';
+  }
+
+  .emoji--crying:before {
+    content: '😥';
+  }
+
+  .emoji--crying:hover:before {
+    content: '😰';
+  }
+
+  .emoji--grimacing:before {
+    content: '😬';
+  }
+
+  .emoji--grimacing:hover:before {
+    content: '😁';
+  }

@@ -1,0 +1,107 @@
+<div class="card">
+  <div class="card-header">
+      <img width="140" length="10" alt="Customer Image"  src="./assets/logo_person.jpeg">
+      <span style="color: aliceblue; font-weight: bold; font-size: x-large;">  &nbsp; &nbsp; &nbsp; Welcome   {{this.currentCustomer.customerName}} &nbsp;</span>
+
+<nav>
+  <ul>
+      <li><a routerLink="/fav">WishList</a></li>
+      <li><a routerLink="/customerorders">Your Orders</a></li>
+      <li><a routerLink="/profile">My Profile</a></li>
+        <li>
+          <div class="bs-example">
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Filter</a>
+                <div class="dropdown-menu">
+                  <button (click)="sortincr()" class="btn btn-primary">Increasing order</button>
+                  <br>
+                  <button (click)="sortdecr()" class="btn btn-primary">Decresing Order</button>
+
+                </div>
+            </div>
+        </div>
+        </li>
+        <li>
+          <form class="form-inline">
+            <input class="form-control mr-sm-2" name="foodName" [(ngModel)]="foodName" (ngModelChange)="Search()" type="text" placeholder="Enter Item to Search" aria-label="Search">
+          </form>
+        </li>
+  </ul>
+</nav>
+</div>
+</div>
+
+<div class="card">
+       <div class="card-body">
+
+          <h4 style="text-align:center; font-weight:bold;  color: crimson;">Menu Items</h4>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" style="color: blueviolet;">FOOD_ID</th>
+            <th scope="col"  style="color: blueviolet;">FOOD_NAME</th>
+            <th scope="col"  style="color: blueviolet;">QTY</th>
+            <th scope="col"  style="color: blueviolet;">PRICE</th>
+            <th scope="col"  style="color: blueviolet;">VENDOR_ID</th>
+            <th scope="col"  style="color: blueviolet;">ACTION</th>
+            <div>
+            </div>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let m of menuList | paginate: config;let i=index">
+            <th scope="row">{{m.foodId}}</th>
+            <td>{{m.foodName}}</td>
+            <td>{{m.foodQty}}</td>
+            <td>{{m.foodPrice | currency:'INR':'symbol':'3.1-1'}}</td>
+            <td>{{m.vendorId}}</td>
+            <td>
+              <button class="btn btn-outline-success" (click)="getAddItem(i)"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+              <button class="btn btn-outline-danger"  (click)="getRemoveItem(i)" ><i class="fa fa-trash"></i></button>
+              <button class="btn btn-outline-primary" (click)="getMenuDetails(m.foodId)"><i class="fa fa-address-book" style="font-size:20px"></i></button>
+              <button class="btn btn-outline-warning" (click)="AddFavourite(i)"><i class="fa fa-bell" style="font-size:20px"></i></button>&nbsp;
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+
+    </div>
+  </div>
+  <h4 style="text-align:center; font-weight:bold; color: crimson;">Cart Items</h4>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"  style="color: blueviolet;">Order Id</th>
+          <th scope="col"  style="color: blueviolet;">Food Id</th>
+          <th scope="col"  style="color: blueviolet;">Quantity</th>
+          <th scope="col"  style="color: blueviolet;">Total Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let o of orderplaced;let i=index">
+          <td>{{o.orderId}}</td>
+          <td>{{o.foodId}}</td>
+          <td>{{o.noOfItems}}</td>
+          <td>{{o.amountToBePaid}}</td>
+        </tr>
+      </tbody>
+      </table>
+
+      <div class="dropdown">
+        <button class="dropbtn">Apply Your coupons</button>
+        <div class="dropdown-content">
+          <div class="one">10% discount upto 100 on 1st Order <button class="btn btn-outline-success" (click)="applyCoupon()">Apply</button><button class="btn btn-outline-danger" (click)="cancleCoupon()">Cancel</button></div>
+         <div class="two">50% discount on more than 10 Order <button class="btn btn-outline-success" (click)="SecondCoupon()">Apply</button><button class="btn btn-outline-danger" (click)="cancleCoupon()">Cancel</button></div>
+         <div class="three">50% discount on 1st Order to vendor <button class="btn btn-outline-success" (click)="ThirdCoupon()">Apply</button><button class="btn btn-outline-danger" (click)="cancleCoupon()">Cancel</button></div>
+         <div class="four">10% off on 2nd Order if placed in 15days <button class="btn btn-outline-success" (click)="FourthCoupon()">Apply</button></div>
+
+        </div>
+      </div>
+
+
+
+      <button class="btn btn-warning" (click)="creating()">Create coupan</button>
+    <div class="placeorder">
+      <button class="btn btn-info " style="position: absolute; left: 40%;  width:200px;" (click)="Checkout()">Place Items</button>
+    </div>

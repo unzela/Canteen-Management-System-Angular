@@ -1,0 +1,20 @@
+.list-group-item{
+    font-size: 150%;
+
+}
+
+.list-group{
+    border: 2px solid black;
+    margin: 10%;
+    width: 30%;
+    margin-left: 35%;
+    padding: 3%;
+    background-color: rgb(201, 196, 196);
+
+}
+
+.button{
+    margin-left: 30%;
+    font-size: 100%;
+    padding: 0;
+}

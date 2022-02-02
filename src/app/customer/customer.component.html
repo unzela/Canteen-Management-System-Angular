@@ -1,0 +1,72 @@
+<div class="card">
+  <div class="card-header">
+    <h1>{{title}}</h1>
+  </div>
+  <div class="card-body">
+<form [formGroup]="contactFrom" (ngSubmit)="onSubmit()" class="register-form">
+  <div class="img-div">
+    <img class="register-img" src="https://images.pexels.com/photos/914388/pexels-photo-914388.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" srcset="">
+  </div>
+  <div class="register-info">
+    <div class="form-group">
+      <label for="cid">ID</label>
+      <input formControlName="cid"  type="text" class = "form-control">
+      <span class="error" *ngIf="!contactFrom.controls['cid'].valid && contactFrom.controls['cid']?.touched"> Please enter a valid first name</span>
+    </div>
+
+    <div class="form-group">
+      <label for="cname">Name</label>
+      <input formControlName="cname"  type="text" id="cname" name="cname" class = "form-control" >
+      <span class="error" *ngIf="!contactFrom.controls['cname'].valid && contactFrom.controls['cname']?.touched"> Please enter a valid last name</span>
+    </div>
+
+    <div class="form-group">
+      <label for="cemail">Email</label>
+      <input type="text"  id="cemail"name="cemail" class = "form-control" formControlName="cemail">
+      <span class="error" *ngIf="!contactFrom.controls['cemail'].valid && contactFrom.controls['cemail']?.touched"> Please enter a valid email</span>
+
+    </div>
+
+    <div class="form-group">
+        <label for="cmobile">Mobile</label>
+        <input type="text"    id="cmobile" name="cmobile" class = "form-control" formControlName="cmobile">
+        <span class="error" *ngIf="!contactFrom.controls['cmobile'].valid && contactFrom.controls['cmobile']?.touched"> Please enter a valid email</span>
+
+      </div>
+
+      <div class="form-group">
+        <label for="cpassword">Password</label>
+        <input type="password"   id="cpassword" name="cpassword" class = "form-control" formControlName="cpassword">
+        <span class="error" *ngIf="!contactFrom.controls['cpassword'].valid && contactFrom.controls['cpassword']?.touched"> Please enter a valid email</span>
+
+      </div>
+
+      <div class="form-group">
+        <label for="caddress">Address</label>
+        <input type="text"  id="caddress" name="caddress" class = "form-control" formControlName="caddress">
+        <span class="error" *ngIf="!contactFrom.controls['caddress'].valid && contactFrom.controls['caddress']?.touched"> Please enter a valid email</span>
+
+      </div>
+
+      <div class="form-group">
+        <label for="cwallet">Wallet Name</label>
+        <input type="text"  id="cwallet" name="cwallet" class = "form-control" formControlName="cwallet">
+        <span class="error" *ngIf="!contactFrom.controls['cwallet'].valid && contactFrom.controls['cwallet']?.touched"> Please enter a valid email</span>
+
+      </div>
+
+      <div class="form-group">
+        <label for="camount">Wallet Amount</label>
+        <input type="text"  id="camount" name="camount" class = "form-control" formControlName="camount">
+        <span class="error" *ngIf="!contactFrom.controls['camount'].valid && contactFrom.controls['camount']?.touched"> Please enter a valid email</span>
+
+      </div>
+
+    <div class="btn">
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </div>
+</form>
+</div>
+</div>
+<router-outlet></router-outlet>

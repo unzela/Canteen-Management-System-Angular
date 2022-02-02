@@ -1,0 +1,39 @@
+<app-ven-nav></app-ven-nav>
+<div class="card">
+    <!-- <div class="card-header">
+       <h1>Welcome to :{{customerName}} & Customer Id : {{customerId}}</h1>
+    </div> -->
+     <div class="card-body">
+
+    <button class="btn btn-primary"><a routerLink="/create">Create Menu Item</a></button>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">FOOD_ID</th>
+          <th scope="col">FOOD_NAME</th>
+          <th scope="col">QTY</th>
+          <th scope="col">PRICE</th>
+          <th scope="col">VENDOR_ID</th>
+          <th scope="col">ACTION</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let m of menuList | paginate: config;let i=index">
+          <th scope="row">{{m.foodId}}</th>
+          <td>{{m.foodName}}</td>
+          <td>{{m.foodQty}}</td>
+          <td>{{m.foodPrice |currency:'INR':'symbol':'3.1-1'}}</td>
+          <td>{{m.vendorId}}</td>
+          <td>
+            <button class="btn btn-success" (click)="getMenuDetails(m.foodId)">Details</button>
+            <button class="btn btn-info" (click)="updateMenu(m.foodId)">Update</button>
+            <button class="btn btn-danger" (click)="deleteMenuItemById(m.foodId)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+
+  </div>
+</div>
+

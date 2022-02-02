@@ -1,0 +1,34 @@
+<div class="card">
+  <div class="card-header">
+      <h1>{{title}}</h1>
+
+    </div>
+  <div class="card-body">
+<form [formGroup]="contactFrom" (ngSubmit)="onSubmit()" class="login-form">
+  <div class="img-div">
+    <img class="login-img" src="https://images.pexels.com/photos/914388/pexels-photo-914388.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="NA" srcset="">
+  </div>
+  <div class="login-info">
+    <div class="form-group">
+      <label for="cemail">Email</label>
+      <input type="text" [(ngModel)]="email" id="cemail" name="cemail" class = "form-control" formControlName="cemail">
+      <span class="error" *ngIf="!contactFrom.controls['cemail'].valid && contactFrom.controls['cemail']?.touched"> Please enter a valid email</span>
+
+    </div>
+
+    <div class="form-group">
+      <label for="cpassword">Password</label>
+      <input type="password" [(ngModel)]="password" id="cpassword" name="cpassword" class = "form-control" formControlName="cpassword">
+      <span class="error" *ngIf="!contactFrom.controls['cpassword'].valid && contactFrom.controls['cpassword']?.touched"> Please enter a valid email</span>
+    </div>
+    <div class="cta">
+      <div class="btn">
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+      <a routerLink="/customer" class="register">Register here</a>
+    </div>
+  </div>
+</form>
+</div>
+</div>
+<router-outlet></router-outlet>

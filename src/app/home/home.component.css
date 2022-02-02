@@ -1,0 +1,36 @@
+.home {
+    height: 90vh;
+    margin: auto;
+}
+
+.home_background-img {
+    margin-top: 0px;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.freeprojectz.com/sites/default/files/Canteen%20Management%20System%20Home%20Page.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.wrapper {
+    display: flex;
+    background-color: black;
+    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.cms {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-weight: 600;
+    font-size: 72px;
+    text-align: center;
+    opacity: 1;
+    color: white;
+}

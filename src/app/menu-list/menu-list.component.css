@@ -1,0 +1,132 @@
+a {
+    color: white;
+    text-decoration: none;
+}
+
+nav{
+    justify-self: right;
+    float: right;
+    margin: 10px 0px 10px 300px;
+
+
+}
+
+
+nav ul{
+    list-style: none;
+
+}
+nav ul li{
+    float: left;
+    padding: 1.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+/*
+nav ul li:hover{
+
+    background: lightblue;
+
+
+} */
+nav ul li a:hover{
+color: #ff0000;
+}
+
+nav ul li a{
+    color:cornsilk;
+    text-decoration: none;
+    margin-inline: 0;
+}
+
+a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: rgb(218, 7, 7);
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  a:hover:after {
+    width: 100%;
+    left: 0;
+  }
+
+
+
+
+
+  a
+  {
+    display: inline-block;
+    position: relative;
+  }
+
+  .card-header
+  {
+      background-color: black;
+  }
+  [type='button'].btn1 {
+    background-color: DodgerBlue; /* Blue background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 12px 16px; /* Some padding */
+    font-size: 16px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+  }
+
+button
+{
+    margin: 3px;
+    margin-bottom: 10px;
+}
+
+table
+{
+    margin-bottom: 3%;
+    margin-left : 2%;
+
+}
+
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 450px;
+
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  width:100%;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+

@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col"  style="color: blueviolet;">Food Id</th>
+        <th scope="col"  style="color: blueviolet;">Food Name</th>
+        <th scope="col"  style="color: blueviolet;">Food Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let f of fList;let i=index">
+
+        <td>{{f.foodId}}</td>
+        <td>{{f.foodName}}</td>
+        <td>{{f.foodPrice}}</td>
+
+      </tr>
+    </tbody>
+    </table>

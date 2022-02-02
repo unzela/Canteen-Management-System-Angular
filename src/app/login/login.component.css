@@ -1,0 +1,38 @@
+a
+{
+    margin-left: 20%;
+    padding-left: 20%;
+    padding-right: 20%;
+    margin-right: 20%;
+}
+
+table{
+    margin-top: 3%;
+}
+
+th, td {
+    width:150px;
+    text-align:center;
+    padding:5px
+
+}
+
+.caption1
+{
+    margin-left: 410px;
+    font-weight: 900;
+}
+
+.caption2
+{
+    margin-right: -350px;
+    font-weight: 900;
+}
+img {
+    border: 1px solid black;
+  }
+  img:hover {
+    outline: 3px solid black;
+  }
+
+

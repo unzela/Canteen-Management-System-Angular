@@ -1,0 +1,97 @@
+<app-nav></app-nav>
+<h1>Place The Order</h1>
+
+<form  (ngSubmit)="onSubmit()">
+    <table class="table table-striped">
+        <tr>
+            <td>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">FoodId</label>
+        <input type="number" ngModel class="form-control" id="foodId" readonly  name="foodId" value={{menu.foodId}}>
+        <label for="exampleFormControlInput1" class="form-label">OrderId</label>
+        <input type="number" class="form-control" id="orderId" readonly [(ngModel)] = "orderId" name="orderId"(click)="getOrderId()" >
+    </div>
+</td>
+<td>
+    <div class="mb-3">
+        <label for="exampleFormControlInput2" class="form-label">FoodName</label>
+        <input type="text"  class="form-control" id="foodName" readonly  name="foodName" value={{menu.foodName}}>
+    </div>
+</td>
+</tr>
+ <!-- <tr>
+     <td> -->
+    <!-- <div class="mb-3">
+        <label for="exampleFormControlInput3" class="form-label">FoodQunatity</label>
+        <input type="text"  class="form-control" id="foodQty"  [(ngModel)] ="qty" name="foodQty" placeholder="Enter food qty">
+    </div> -->
+<!-- </td>
+<td> -->
+
+<!--
+</td>
+</tr> -->
+<tr>
+    <td>
+    <div class="mb-3">
+        <label for="vendorId" class="form-label">Vendor Id</label>
+        <input type="number" ngModel class="form-control" id="vendorId" readonly  name="vendorId" value={{menu.vendorId}}>
+      </div>
+    </td>
+    <td>
+          <div class="mb-3">
+            <label for="customerId" class="form-label">Customer Id</label>
+            <input type="number" ngModel class="form-control" id="customerId" [(ngModel)]="cId"  name="customerId">
+          </div>
+    </td>
+</tr>
+<tr>
+    <td>
+        <div class="mb-3">
+            <label for="noOfItems" class="form-label">No Of Items</label>
+            <input type="number" ngModel class="form-control" id="noOfItems"  [(ngModel)]="qty" name="noOfItems">
+          </div>
+    </td>
+    <td>
+        <div class="mb-3">
+            <label for="noOfItems" class="form-labe">OrderDateAndTime</label>
+            <input type="date" ngModel class="form-control" id="orderDateAndTime"  [(ngModel)]="otime" name="orderDateAndTime">
+          </div>
+    </td>
+</tr>
+<tr>
+    <td>
+        <div class="mb-3">
+            <label for="amount" class="form-labe">Amount To Be Paid</label>
+            <input type="number" ngModel class="form-control" id="amount"  [(ngModel)]="amountToBePaid" name="amount"  (click)="mul(menu.foodPrice,qty)">
+          </div>
+    </td>
+    <td>
+        <div class="mb-3">
+            <label for="token" class="form-labe">Token</label>
+            <input type="number" ngModel class="form-control" id="token"  [(ngModel)]="token" name="token" (click)="getToken()">
+          </div>
+    </td>
+</tr>
+<tr>
+    <td>
+        <div class="mb-3">
+            <label for="status" class="form-labe">Status</label>
+            <input type="text" ngModel class="form-control" id="status" [(ngModel)]="status"  name="status">
+          </div>
+    </td>
+    <td>
+        <div class="mb-3">
+            <label for="comment" class="form-labe">Comment</label>
+            <input type="text" ngModel class="form-control" id="comment"  [(ngModel)]="comment" name="comment">
+          </div>
+    </td>
+</tr>
+      </table>
+
+      <div class="mb-3">
+          <button type="submit" class="btn btn-success">Place Order</button>
+          <button (click)="list()" class="btn btn-primary">Back To Menu List</button>
+      </div>
+
+    </form>

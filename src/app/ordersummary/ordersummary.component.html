@@ -1,0 +1,47 @@
+<app-nav-profile></app-nav-profile>
+<div class="card">
+    <div class="card-body">
+      <div style="text-align:center;color: blue;font-weight: bolder;font-size: larger;">ORDER SUMMARY</div>
+      <br>
+      <hr>
+        <table class="table">
+
+          <thead>
+            <tr>
+              <th scope="col" style="color:blue;">OrderId</th>
+              <th scope="col" style="color:blue;">FoodId</th>
+              <th scope="col" style="color:blue;">No of items</th>
+              <th scope="col" style="color:blue;">Amount</th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let p of summary;let i=index">
+
+                <th scope="row">{{p.orderId}}</th>
+                <td>{{p.foodId}}</td>
+                <td>{{p.noOfItems}}</td>
+                <td>{{p.amountToBePaid}}</td>
+              </tr>
+          </tbody>
+          </table>
+          <table>
+            <tr>
+              <td style="color:rgb(255, 115, 0); font-weight: bolder;">Discounted Amount =</td>
+              <td>{{this.max}}</td>
+            </tr>
+              <tr>
+              <td style="color:rgb(255, 115, 0); font-weight: bolder;">Total Cart Amount =</td>
+
+                  <td>{{this.value}}</td>
+              </tr>
+          </table>
+          </div>
+          </div>
+
+
+
+
+<button btn btn-success><a routerLink="/rating">Give your Feedback to improve</a></button>
+

@@ -1,0 +1,46 @@
+<app-nav></app-nav>
+<div class="card">
+    <div class="card-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">OrderId</th>
+              <th scope="col">FoodId</th>
+              <th scope="col">VendorId</th>
+              <th scope="col">CustomerId</th>
+              <th scope="col">No of items</th>
+              <th scope="col">Order Date</th>
+              <th scope="col">Amount</th>
+              <th scope="col">Token</th>
+              <th scope="col">Status</th>
+              <th scope="col">Comment</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let o of orderList;let i=index">
+
+                <th scope="row">{{o.orderId}}</th>
+                <td>{{o.foodId}}</td>
+                <td>{{o.vendorId}}</td>
+                <td>{{o.customerId}}</td>
+                <td>{{o.noOfItems}}</td>
+                <td>{{o.orderDateTime}}</td>
+                <td>{{o.amountToBePaid}}</td>
+                <td>{{o.tokenNumber}}</td>
+                <td>{{o.status}}</td>
+                <td>{{o.comment}}</td>
+                <td>
+                  <button class="btn btn-primary" (click)="placeOrder(o)">Accept</button>
+                  <!-- call this function in the above button click -->
+                  <button class="btn btn-info" (click)="cancleOrder(o)">Reject</button>
+                </td>
+              </tr>
+          </tbody>
+          </table>
+          </div>
+
+
+
+
+</div>

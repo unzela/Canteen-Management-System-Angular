@@ -1,0 +1,47 @@
+<app-nav></app-nav>
+
+<div class="container-fluid">
+    <div class="row justify-content-center center">
+    <h1 style="text-align:center;">Update Customer profile</h1>
+ <form (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">CustomerId</label>
+        <input type="text" class="form-control" id="customerId"  readonly name="customerId" [(ngModel)] = "this.cid">
+    </div>
+     <div class="mb-3">
+        <label for="exampleFormControlInput2" class="form-label">customerName</label>
+        <input type="text" class="form-control" id="customerName" placeholder="Enter customerName" [(ngModel)] = "this.cname" name="customerName">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput3" class="form-label">customerEmail</label>
+        <input type="text" class="form-control" id="customerEmail" placeholder="Enter customerEmail" [(ngModel)] = "this.cemail" name="customerEmail">
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleFormControlInput4" class="form-label">customerAddress</label>
+        <input type="text" class="form-control" id="customerAddress" placeholder="Enter customerAddress" [(ngModel)] = "this.caddress" name="customerAddress">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput5" class="form-label">Mobile Number</label>
+        <input type="text" class="form-control" id="mobileNumber" placeholder="Enter mobileNumber" [(ngModel)] = "this.cmobile" name="mobileNumber">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput6" class="form-label">Password</label>
+        <input type="text" class="form-control" id="password" placeholder="Enter password" [(ngModel)] = "this.cpass" name="password">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput7" class="form-label">walletName</label>
+        <input type="text" class="form-control" id="walletName" placeholder="Enter walletName" [(ngModel)] = "this.cwname" name="walletName">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput8" class="form-label">walletAmount</label>
+        <input type="text" class="form-control" readonly id="walletAmount" placeholder="Enter walletAmount" [(ngModel)] = "this.cwamt" name="walletAmount">
+    </div>
+
+      <div class="mb-3" style="text-align: center;">
+          <button type="submit" class="btn btn-primary">Update</button>&nbsp;&nbsp;
+          <button class="btn btn-primary">Back</button>
+      </div>
+    </form>
+</div>
+</div>

@@ -1,0 +1,70 @@
+<app-nav-profile></app-nav-profile>
+<div class="card">
+    <div class="card-body">
+      <div style="text-align:center;color: blue;font-weight: bolder;">PLACED ORDERS WILL BE SHOWN HERE</div>
+      <br>
+      <hr>
+        <table class="table">
+
+          <thead>
+            <tr>
+              <th scope="col" style="color:blue;">OrderId</th>
+              <th scope="col" style="color:blue;">FoodId</th>
+              <th scope="col" style="color:blue;">No of items</th>
+              <th scope="col" style="color:blue;">Order Date</th>
+              <th scope="col" style="color:blue;">Amount</th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr *ngFor="let p of placedorder;let i=index">
+
+                <th scope="row">{{p.orderId}}</th>
+                <td>{{p.foodId}}</td>
+                <td>{{p.noOfItems}}</td>
+                <td>{{p.orderDateTime}}</td>
+                <td>{{p.amountToBePaid}}</td>
+              </tr>
+          </tbody>
+          </table>
+
+              <div style="text-align:center;color: red;font-weight: bolder; ">PENDING ORDERS WILL BE SHOWN HERE</div>
+              <br>
+              <hr>
+              <table class="table">
+
+                <thead>
+                  <tr>
+                    <th scope="col" style="color:red;">OrderId</th>
+                    <th scope="col" style="color:red;">FoodId</th>
+                    <th scope="col" style="color:red;">No of items</th>
+                    <th scope="col" style="color:red;">Order Date</th>
+                    <th scope="col" style="color:red;">Amount</th>
+
+
+                  </tr>
+                </thead>
+                <tbody>
+
+              <tr *ngFor="let o of orderList;let i=index">
+
+                <th scope="row">{{o.orderId}}</th>
+                <td>{{o.foodId}}</td>
+                <td>{{o.noOfItems}}</td>
+                <td>{{o.orderDateTime}}</td>
+                <td>{{o.amountToBePaid}}</td>
+
+              </tr>
+
+
+
+          </tbody>
+          </table>
+          </div>
+
+
+
+
+</div>

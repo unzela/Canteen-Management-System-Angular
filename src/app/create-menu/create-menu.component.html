@@ -1,0 +1,37 @@
+<app-nav></app-nav>
+<br><br>
+<h1>Create Menu Item</h1>
+<form (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">FoodId</label>
+        <input type="text" class="form-control" id="foodId" placeholder="Enter FoodId" [(ngModel)] = "menu.foodId" name="foodId">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput2" class="form-label">FoodName</label>
+        <input type="text" class="form-control" id="foodName" placeholder="Enter FoodName" [(ngModel)]="menu.foodName" name="foodName">
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleFormControlInput3" class="form-label">FoodQunatity</label>
+        <input type="text" class="form-control" id="foodQty" placeholder="Enter FoodQunatity" [(ngModel)]="menu.foodQty" name="foodQty">
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleFormControlInput4" class="form-label">FoodPrice</label>
+        <input type="text" class="form-control" id="foodPrice" placeholder="Enter FoodPrice" [(ngModel)]="menu.foodPrice" name="foodPrice">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput4" class="form-label">Vendor Id</label>
+        <input type="text" class="form-control" id="vendorId" placeholder="Enter vendorId" [(ngModel)]="menu.vendorId" name="vendorId">
+      </div>
+
+      <div class="mb-3">
+          <button type="submit" class="btn btn-success">Submit</button>
+          <button (click)="list()" class="btn btn-primary">Back To Menu List</button>
+      </div>
+
+    </form>
+
+    <div [hidden]="!submitted">
+        <h4>Your menu item successfully.........</h4>
+    </div>

@@ -1,0 +1,65 @@
+nav{
+    justify-self: right;
+    float: right;
+    margin: 10px 0px 10px 300px;
+
+
+}
+
+
+nav ul{
+    list-style: none;
+
+}
+nav ul li{
+    float: left;
+    padding: 1.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+/*
+nav ul li:hover{
+
+    background: lightblue;
+
+
+} */
+nav ul li a:hover{
+color: #ff0000;
+}
+
+nav ul li a{
+    color:cornsilk;
+    text-decoration: none;
+    margin-inline: 0;
+}
+
+a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: rgb(218, 7, 7);
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  a:hover:after {
+    width: 100%;
+    left: 0;
+  }
+
+
+
+  a
+  {
+    display: inline-block;
+    position: relative;
+  }
+
+  .card-header
+  {
+      background-color: black;
+  }

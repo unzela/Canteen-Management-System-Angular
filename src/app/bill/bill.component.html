@@ -1,0 +1,25 @@
+<app-nav></app-nav>
+<hr>
+<div *ngIf="bill">
+  <div>
+      <label><b>OrderId : </b></label>{{bill.orderId}}
+  </div>
+  <div>
+    <label><b>FoodName : </b></label>{{bill.foodName}}
+</div>
+<div>
+    <label><b>Quantity : </b></label>{{bill.noOfItems}}
+</div>
+<div>
+    <label><b>Price : </b></label>{{bill.foodPrice}}
+</div>
+<div>
+    <label><b>CustomerId : </b></label>{{bill.customerId}}
+</div>
+<div>
+    <label><b>Total : </b></label>{{bill.amountToBePaid}}
+</div>
+</div>
+<br><br>
+
+<button (click)="list()" class="btn btn-primary">Back To Menu List</button>
